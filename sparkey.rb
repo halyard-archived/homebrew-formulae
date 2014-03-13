@@ -11,6 +11,6 @@ class Sparkey < Formula
     system 'autoreconf --install'
     system "./configure --prefix=#{prefix}"
     system 'make'
-    lib.install File['.libs/libsparkey.0.dylib']
+    system 'make install'
   end
 end
