@@ -3,6 +3,7 @@ require 'formula'
 class Sparkey < Formula
   homepage 'https://github.com/spotify/sparkey'
   url 'https://github.com/spotify/sparkey.git'
+  version '0.2.0'
 
   depends_on 'snappy' => :build
 
