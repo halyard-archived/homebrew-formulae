@@ -2,13 +2,12 @@ require 'formula'
 
 class Openssh < Formula
   homepage 'http://www.openssh.com/'
-  url 'http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-6.5p1.tar.gz'
-  version '6.5p1'
-  sha256 'a1195ed55db945252d5a1730d4a2a2a5c1c9a6aa01ef2e5af750a962623d9027'
+  url 'http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-6.6p1.tar.gz'
+  version '6.6p1'
+  sha256 '48c1f0664b4534875038004cc4f3555b8329c2a81c1df48db5c517800de203bb'
 
   option 'with-brewed-openssl', 'Build with Homebrew OpenSSL instead of the system version'
   option 'with-keychain-support', 'Add native OS X Keychain and Launch Daemon support to ssh-agent'
-  option 'with-gssapi-support', 'Add support to GSSAPI key exchange'
 
   depends_on 'autoconf' => :build if build.with? 'keychain-support'
   depends_on 'openssl' if build.with? 'brewed-openssl'
@@ -17,9 +16,7 @@ class Openssh < Formula
 
   def patches
     p = []
-    # Apply a revised version of Simon Wilkinson's gsskex patch (http://www.sxw.org.uk/computing/patches/openssh.html), which has also been included in Apple's openssh for a while
-    p << 'https://trac.macports.org/export/117643/trunk/dports/net/openssh/files/0002-Apple-keychain-integration-other-changes.patch' if build.include? 'with-keychain-support'
-    p << 'https://trac.macports.org/export/117643/trunk/dports/net/openssh/files/openssh-6.3p1-gsskex-all-20130920.patch' if build.with? 'gssapi-support'
+    p << 'https://trac.macports.org/export/117984/trunk/dports/net/openssh/files/0002-Apple-keychain-integration-other-changes.patch' if build.include? 'with-keychain-support'
     p
   end
 
