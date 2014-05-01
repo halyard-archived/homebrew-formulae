@@ -21,7 +21,7 @@ class Encfs < Formula
   def install
     # Add correct flags for linkage with {osx,}fuse and gettext libs
     gettext = Formula['gettext']
-    ENV.append 'CPPFLAGS', %x[pkg-config fuse --cflags].chomp + "-I#{gettext.include}"
+    ENV.append 'CPPFLAGS', "-I/usr/local/include/osxfuse -I#{gettext.include}"
     ENV.append 'LDFLAGS', %x[pkg-config fuse --libs].chomp + "-L#{gettext.lib}"
     inreplace "configure", "-lfuse", "-losxfuse"
 
