@@ -2,8 +2,8 @@ require 'formula'
 
 class Openssh < Formula
   homepage 'http://www.openssh.com/'
-  url "http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-#{version}.tar.gz"
   version '6.7p1'
+  url "http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-#{version}.tar.gz"
   sha256 'b2f8394eae858dabbdef7dac10b99aec00c95462753e80342e530bbb6f725507'
 
   depends_on 'autoconf' => :build
