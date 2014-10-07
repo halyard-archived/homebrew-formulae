@@ -4,7 +4,7 @@ class Encfs < Formula
   homepage 'http://www.arg0.net/encfs'
   version '1.7.4'
   url "https://encfs.googlecode.com/files/encfs-#{version}.tgz"
-  sha1 '3d824ba188dbaabdc9e36621afb72c651e6e2945'
+  sha256 '282ef0f04f2dd7ba3527b45621fab485b7cc510c2ceee116600d0348dc2170a8'
 
   depends_on 'pkg-config' => :build
   depends_on 'gettext'
