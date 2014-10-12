@@ -12,8 +12,8 @@ class Openssh < Formula
   depends_on 'pkg-config' => :build if build.with? "ldns"
 
   patch do
-    url 'https://gist.githubusercontent.com/akerl/66872c64639d2d6ff333/raw/2f6a8e92dabd58cc4ce5bd11ca0759d3fc5a811f/0003-Apple-keychain-integration-other-changes.patch'
-    sha256 'f35f4a1cde86a9158189d8249e56a21327e30eb2b228e554bf607722b7d4fef1'
+    url 'https://gist.githubusercontent.com/akerl/a347acb4b923a673bfc1/raw/efb6d049fcf809897895e935f75dcf52c906723a/0003-Apple-keychain-integration-other-changes.patch'
+    sha256 'c3f76d260d55f50fa7456f56da2a71d425a0c942f61338eed9c4b103d2cefa43'
   end
 
   def install
