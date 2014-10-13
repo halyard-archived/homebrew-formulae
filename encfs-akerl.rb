@@ -2,11 +2,11 @@ require 'formula'
 
 class EncfsAkerl < Formula
   homepage 'https://vgough.github.io/encfs/'
-  revision 1
+  version '1.7.5'
 
   stable do
-    url 'https://github.com/vgough/encfs/archive/v1.7.5.tar.gz'
-    sha1 'f8bb2332b7a88f510cd9a18adb0f4fb903283edd'
+    url "https://github.com/vgough/encfs/archive/v#{version}.tar.gz"
+    sha256 '111f15521479832a0ec5473c7e201316c88cae4e2c70bf8cea7fa23acb42c017'
 
     # Fix link times and xattr on links for OSX
     # Proper fix is already in upstream/dev
