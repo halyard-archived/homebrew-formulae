@@ -1,10 +1,10 @@
 require 'formula'
 
 class Encfs < Formula
-  homepage 'http://www.arg0.net/encfs'
-  version '1.7.4'
-  url "https://encfs.googlecode.com/files/encfs-#{version}.tgz"
-  sha256 '282ef0f04f2dd7ba3527b45621fab485b7cc510c2ceee116600d0348dc2170a8'
+  homepage 'https://vgough.github.io/encfs/'
+  version '1.7.5'
+  url "https://github.com/vgough/encfs/archive/v#{version}.tar.gz"
+  sha256 '111f15521479832a0ec5473c7e201316c88cae4e2c70bf8cea7fa23acb42c017'
 
   depends_on 'pkg-config' => :build
   depends_on 'gettext'
