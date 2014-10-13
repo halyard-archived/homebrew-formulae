@@ -1,6 +1,6 @@
 require 'formula'
 
-class Ipmiutil < Formula
+class IpmiutilAkerl < Formula
   homepage 'http://ipmiutil.sourceforge.net/'
   version '2.9.1'
   url "https://downloads.sourceforge.net/project/ipmiutil/ipmiutil-#{version}.tar.gz"
