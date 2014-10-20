@@ -1,6 +1,6 @@
 require 'formula'
 
-class SparkeyAkerl < Formula
+class SparkeyHalyard < Formula
   homepage 'https://github.com/spotify/sparkey'
   url 'https://github.com/spotify/sparkey.git'
   version '0.2.0'

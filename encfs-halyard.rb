@@ -1,6 +1,6 @@
 require 'formula'
 
-class EncfsAkerl < Formula
+class EncfsHalyard < Formula
   homepage 'https://vgough.github.io/encfs/'
   version '1.7.5'
 

@@ -1,6 +1,6 @@
 require 'formula'
 
-class OpensshAkerl < Formula
+class OpensshHalyard < Formula
   homepage 'http://www.openssh.com/'
   version '6.7p1'
   url "http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-#{version}.tar.gz"
