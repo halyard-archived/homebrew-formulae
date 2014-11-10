@@ -2,9 +2,9 @@ require 'formula'
 
 class IpmiutilHalyard < Formula
   homepage 'http://ipmiutil.sourceforge.net/'
-  version '2.9.1'
-  url "https://downloads.sourceforge.net/project/ipmiutil/ipmiutil-#{version}.tar.gz"
-  sha256 '6cb587a73b8f37796eda75a33d5321e1aa7dbbd266aa793f42005623b27aaa14'
+  version '2.9.2'
+  url "http://ipmiutil.sourceforge.net/FILES/ipmiutil-#{version}-macos.tar.gz"
+  sha256 'eb00f0582ee75e1f8d371e398d546ddd7639595b9a0a1f27a84cc6ecb038dbe6'
 
   # Make ipmiutil treat Darwin as BSD
   patch :DATA
@@ -15,7 +15,7 @@ class IpmiutilHalyard < Formula
                           "--enable-sha256",
                           "--enable-gpl"
 
-    system "make", "TMPDIR=#{`mktemp -d -t ipmiutil`.strip}"
+    system "make", "TMPDIR=#{ENV['TMPDIR']}"
     # DESTDIR is needed to make everything go where we want it.
     system "make", "prefix=/",
                    "DESTDIR=#{prefix}",
