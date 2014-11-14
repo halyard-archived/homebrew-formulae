@@ -3,8 +3,8 @@ require 'formula'
 class IpmiutilHalyard < Formula
   homepage 'http://ipmiutil.sourceforge.net/'
   version '2.9.2'
-  url "http://ipmiutil.sourceforge.net/FILES/ipmiutil-#{version}-macos.tar.gz"
-  sha256 'eb00f0582ee75e1f8d371e398d546ddd7639595b9a0a1f27a84cc6ecb038dbe6'
+  url "https://downloads.sourceforge.net/project/ipmiutil/ipmiutil-#{version}.tar.gz"
+  sha256 'c32687d233390364a91d16920dcd7df80c06365ade9e51d74b2af5c5d1acead8'
 
   # Make ipmiutil treat Darwin as BSD
   patch :DATA
