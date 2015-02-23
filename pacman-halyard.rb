@@ -13,7 +13,7 @@ class PacmanHalyard < Formula
 
   def install
     ENV.prepend_path 'PKG_CONFIG_PATH', "#{Formula['libarchive'].lib}/pkgconfig"
-    ENV['CPATH'] = '-I/opt/boxen/homebrew/Cellar/libarchive/3.1.2/include'
+    ENV['CPATH'] = "-I#{Formula['libarchive'].include}"
     ENV['BASH_SHELL'] = "#{Formula['bash'].bin}/bash"
     system "./configure --prefix=#{prefix}"
     system 'make'
