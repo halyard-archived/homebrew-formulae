@@ -10,6 +10,7 @@ class PacmanHalyard < Formula
   depends_on 'libarchive'
   depends_on 'pkg-config'
   depends_on 'bash'
+  depends_on 'fakeroot'
 
   def install
     ENV.prepend_path 'PKG_CONFIG_PATH', "#{Formula['libarchive'].lib}/pkgconfig"
