@@ -2,9 +2,9 @@ require 'formula'
 
 class OpensshHalyard < Formula
   homepage 'http://www.openssh.com/'
-  version '6.7p1'
+  version '6.8p1'
   url "http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-#{version}.tar.gz"
-  sha256 'b2f8394eae858dabbdef7dac10b99aec00c95462753e80342e530bbb6f725507'
+  sha256 '3ff64ce73ee124480b5bf767b9830d7d3c03bbcb6abe716b78f0192c37ce160e'
 
   depends_on 'autoconf' => :build
   depends_on 'openssl'
@@ -12,8 +12,8 @@ class OpensshHalyard < Formula
   depends_on 'pkg-config' => :build if build.with? "ldns"
 
   patch do
-    url 'https://gist.githubusercontent.com/akerl/a347acb4b923a673bfc1/raw/efb6d049fcf809897895e935f75dcf52c906723a/0003-Apple-keychain-integration-other-changes.patch'
-    sha256 'c3f76d260d55f50fa7456f56da2a71d425a0c942f61338eed9c4b103d2cefa43'
+    url 'https://gist.githubusercontent.com/akerl/d80c6265e87033094b7e/raw/a8f6f1bfa14cd53fbb2eddb56c170f15a8994722/openssh6.8p1-patch-for-osx.diff'
+    sha256 'b9d0ce757d26196449db240805b867e670403e5b7eacf8968dd11f7d1bf59ee5'
   end
 
   def install
