@@ -2,9 +2,9 @@ require 'formula'
 
 class OpensshHalyard < Formula
   homepage 'http://www.openssh.com/'
-  version '6.8p1'
+  version '6.9p1'
   url "http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-#{version}.tar.gz"
-  sha256 '3ff64ce73ee124480b5bf767b9830d7d3c03bbcb6abe716b78f0192c37ce160e'
+  sha256 '6e074df538f357d440be6cf93dc581a21f22d39e236f217fcd8eacbb6c896cfe'
 
   depends_on 'autoconf' => :build
   depends_on 'openssl'
