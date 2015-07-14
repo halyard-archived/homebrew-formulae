@@ -12,8 +12,13 @@ class OpensshHalyard < Formula
   depends_on 'pkg-config' => :build if build.with? "ldns"
 
   patch do
-    url 'https://gist.githubusercontent.com/akerl/d80c6265e87033094b7e/raw/a8f6f1bfa14cd53fbb2eddb56c170f15a8994722/openssh6.8p1-patch-for-osx.diff'
-    sha256 'b9d0ce757d26196449db240805b867e670403e5b7eacf8968dd11f7d1bf59ee5'
+    url 'https://gist.githubusercontent.com/akerl/9a6efd3bd578e99cfbb8/raw/a0f90ab633f2c388f1eff3af82ebb063c8d913df/gistfile1.txt'
+    sha256 'd012594430333624434ab21fd54be8353ce4c72cdff7c42d2e5b6794273c3e23'
+  end
+
+  patch do
+    url 'https://gist.githubusercontent.com/akerl/588005c5e1ff8210870a/raw/a18b03d85e0781336ff780f3961dd7d8148d3a06/gistfile1.txt'
+    sha256 'df3feaf0c637ee486017355ec1d0dce387aa315968ed81000ffb0bcf628839ed'
   end
 
   def install
