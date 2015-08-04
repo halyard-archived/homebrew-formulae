@@ -6,6 +6,15 @@ class GnupgHalyard < Formula
   url "https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-#{version}.tar.bz2"
   sha256 '5e599ad542199f3bd733eed2b88a539d1b4c3beda2dbab0ff69f1896f52e92fd'
 
+  patch do
+    url "https://github.com/mtigas/homebrew-gpg21/raw/master/Patches/0001-fix-mac-os-x-build.patch"
+    sha1 "4cd7ec2081646032de291b1f012a647841296f1d"
+  end
+  patch do
+    url "https://github.com/mtigas/homebrew-gpg21/raw/master/Patches/0002-fix-mac-os-x-build.patch"
+    sha1 "6881a4fb198b0399f75e82c73f3c8a8b0e6711a0"
+  end
+
   depends_on 'libgpg-error'
   depends_on 'libgcrypt'
   depends_on 'libksba'
