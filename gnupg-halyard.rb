@@ -1,6 +1,6 @@
 require 'formula'
 
-class Gnupg2Halyard < Formula
+class GnupgHalyard < Formula
   homepage 'https://www.gnupg.org/'
   version '2.1.6'
   url "https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-#{version}.tar.bz2"
