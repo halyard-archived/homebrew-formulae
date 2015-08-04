@@ -7,12 +7,12 @@ class GnupgHalyard < Formula
   sha256 '5e599ad542199f3bd733eed2b88a539d1b4c3beda2dbab0ff69f1896f52e92fd'
 
   patch do
-    url "https://github.com/mtigas/homebrew-gpg21/raw/master/Patches/0001-fix-mac-os-x-build.patch"
-    sha1 "4cd7ec2081646032de291b1f012a647841296f1d"
+    url 'https://github.com/mtigas/homebrew-gpg21/raw/master/Patches/0001-fix-mac-os-x-build.patch'
+    #sha256 ''
   end
   patch do
-    url "https://github.com/mtigas/homebrew-gpg21/raw/master/Patches/0002-fix-mac-os-x-build.patch"
-    sha1 "6881a4fb198b0399f75e82c73f3c8a8b0e6711a0"
+    url 'https://github.com/mtigas/homebrew-gpg21/raw/master/Patches/0002-fix-mac-os-x-build.patch'
+    #sha256 ''
   end
 
   depends_on 'libgpg-error'
@@ -30,17 +30,17 @@ class GnupgHalyard < Formula
   conflicts_with 'dirmngr', :because => 'This GnuPG 2.1 includes dirmngr'
 
   def install
-    inreplace "configure" do |s|
+    inreplace 'configure' do |s|
       s.gsub! "PACKAGE_NAME='gnupg'", "PACKAGE_NAME='gnupg2'"
       s.gsub! "PACKAGE_TARNAME='gnupg'", "PACKAGE_TARNAME='gnupg2'"
     end
-    inreplace "tools/gpgkey2ssh.c", "gpg --list-keys", "gpg2 --list-keys"
+    inreplace 'tools/gpgkey2ssh.c', 'gpg --list-keys', 'gpg2 --list-keys'
 
-    (var/"run").mkpath
+    (var/'run').mkpath
 
-    ENV.append "LDFLAGS", "-lresolv"
+    ENV.append 'LDFLAGS', '-lresolv'
 
-    ENV["gl_cv_absolute_stdint_h"] = "#{MacOS.sdk_path}/usr/include/stdint.h"
+    ENV['gl_cv_absolute_stdint_h'] = "#{MacOS.sdk_path}/usr/include/stdint.h"
 
     args = %W[
       --disable-dependency-tracking
@@ -49,17 +49,17 @@ class GnupgHalyard < Formula
       --enable-symcryptrun
     ]
 
-    if build.with? "readline"
-      args << "--with-readline=#{Formula["readline"].opt_prefix}"
+    if build.with? 'readline'
+      args << "--with-readline=#{Formula['readline'].opt_prefix}"
     end
 
-    system "./configure", *args
-    system "make"
-    system "make", "check"
-    system "make", "install"
+    system './configure', *args
+    system 'make'
+    system 'make', 'check'
+    system 'make', 'install'
 
     # Conflicts with a manpage from the 1.x formula, and
     # gpg-zip isn't installed by this formula anyway
-    rm man1/"gpg-zip.1"
+    rm man1/'gpg-zip.1'
   end
 end
