@@ -7,12 +7,12 @@ class GnupgHalyard < Formula
   sha256 '5e599ad542199f3bd733eed2b88a539d1b4c3beda2dbab0ff69f1896f52e92fd'
 
   patch do
-    url 'https://github.com/mtigas/homebrew-gpg21/raw/master/Patches/0001-fix-mac-os-x-build.patch'
-    #sha256 ''
+    url 'https://raw.githubusercontent.com/halyard/homebrew-formulae/master/Patches/gnupg-halyard-0001-makefile.patch'
+    sha256 'ff5248765977cba3fcfedd36f498c5ee2eeb244be371b4cd19098bbd37aeec5a'
   end
   patch do
-    url 'https://github.com/mtigas/homebrew-gpg21/raw/master/Patches/0002-fix-mac-os-x-build.patch'
-    #sha256 ''
+    url 'https://raw.githubusercontent.com/halyard/homebrew-formulae/master/Patches/gnupg-halyard-0002-makefile.patch'
+    sha256 '7bc0469a56e7e1b4a714491e88fca7cadc4eebad9bb76a841a55880f220d8a7e'
   end
 
   depends_on 'libgpg-error'

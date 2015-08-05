@@ -12,12 +12,12 @@ class OpensshHalyard < Formula
   depends_on 'pkg-config' => :build if build.with? "ldns"
 
   patch do
-    url 'https://raw.githubusercontent.com/halyard/homebrew-formulae/master/Patches/0001-openssh-keychain.patch'
+    url 'https://raw.githubusercontent.com/halyard/homebrew-formulae/master/Patches/openssh-halyard-0001-keychain.patch'
     sha256 'd012594430333624434ab21fd54be8353ce4c72cdff7c42d2e5b6794273c3e23'
   end
 
   patch do
-    url 'https://raw.githubusercontent.com/halyard/homebrew-formulae/master/Patches/0002-openssh-pam.patch'
+    url 'https://raw.githubusercontent.com/halyard/homebrew-formulae/master/Patches/openssh-halyard-0002-pam.patch'
     sha256 'df3feaf0c637ee486017355ec1d0dce387aa315968ed81000ffb0bcf628839ed'
   end
 
