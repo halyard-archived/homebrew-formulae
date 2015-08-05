@@ -43,6 +43,8 @@ class GnupgHalyard < Formula
     end
     inreplace 'tools/gpgkey2ssh.c', 'gpg --list-keys', 'gpg2 --list-keys'
 
+    inreplace 'g10/keygen.c', 'max=4096', 'max=8192'
+
     (var/'run').mkpath
 
     ENV.append 'LDFLAGS', '-lresolv'
