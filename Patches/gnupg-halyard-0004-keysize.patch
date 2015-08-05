@@ -1,6 +1,6 @@
 diff -u -r a/agent/command-ssh.c b/agent/command-ssh.c
 --- a/agent/command-ssh.c	2015-06-30 15:26:58.000000000 -0400
-+++ b/agent/command-ssh.c	2015-08-05 11:09:59.000000000 -0400
++++ b/agent/command-ssh.c	2015-08-05 11:30:43.000000000 -0400
 @@ -598,9 +598,9 @@
  
    /* To avoid excessive use of secure memory we check that an MPI is
@@ -12,4 +12,16 @@ diff -u -r a/agent/command-ssh.c b/agent/command-ssh.c
 +      log_error (_("ssh keys greater than %d bits are not supported\n"), 8192);
        err = GPG_ERR_TOO_LARGE;
        goto leave;
+     }
+@@ -692,9 +692,9 @@
+ 
+   /* To avoid excessive use of secure memory we check that an MPI is
+      not too large. */
+-  if (mpi_data_size > 520)
++  if (mpi_data_size > 1040)
+     {
+-      log_error (_("ssh keys greater than %d bits are not supported\n"), 4096);
++      log_error (_("ssh keys greater than %d bits are not supported\n"), 8192);
+       err = GPG_ERR_TOO_LARGE;
+       goto out;
      }

@@ -5,7 +5,7 @@ class GnupgHalyard < Formula
   version '2.1.6'
   url "https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-#{version}.tar.bz2"
   sha256 '5e599ad542199f3bd733eed2b88a539d1b4c3beda2dbab0ff69f1896f52e92fd'
-  revision 2
+  revision 3
 
   patch_base = 'https://raw.githubusercontent.com/halyard/homebrew-formulae/master/Patches'
 
@@ -23,7 +23,7 @@ class GnupgHalyard < Formula
   end
   patch do
     url "#{patch_base}/gnupg-halyard-0004-keysize.patch"
-    sha256 '7a47381255a7538017595bc33b77076415e959f7d508186e7139dd7ea5d01d7d'
+    sha256 '08da56825c3ccb5a31200184d106e28826109d33abfdf0c75eaa9fe734c29a38'
   end
 
   depends_on 'libgpg-error'
