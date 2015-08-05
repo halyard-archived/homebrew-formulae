@@ -8,11 +8,11 @@ class GnupgHalyard < Formula
 
   patch do
     url 'https://raw.githubusercontent.com/halyard/homebrew-formulae/master/Patches/gnupg-halyard-0001-makefile.patch'
-    sha256 'ff5248765977cba3fcfedd36f498c5ee2eeb244be371b4cd19098bbd37aeec5a'
+    sha256 '48c15fa61a6ca03fad78db879415996ec37a7c117e186ef720c6f71cd79f8093'
   end
   patch do
     url 'https://raw.githubusercontent.com/halyard/homebrew-formulae/master/Patches/gnupg-halyard-0002-makefile.patch'
-    sha256 '7bc0469a56e7e1b4a714491e88fca7cadc4eebad9bb76a841a55880f220d8a7e'
+    sha256 '899166d8e56b2c953ff6324a0f6b8b52ff5d368ce0dd3cdc45fb1a3fe8ec6859'
   end
 
   depends_on 'libgpg-error'
