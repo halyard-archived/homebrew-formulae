@@ -5,6 +5,7 @@ class GnupgHalyard < Formula
   version '2.1.6'
   url "https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-#{version}.tar.bz2"
   sha256 '5e599ad542199f3bd733eed2b88a539d1b4c3beda2dbab0ff69f1896f52e92fd'
+  revision 1
 
   patch_base = 'https://raw.githubusercontent.com/halyard/homebrew-formulae/master/Patches'
 
