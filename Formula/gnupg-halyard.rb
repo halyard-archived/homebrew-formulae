@@ -6,13 +6,19 @@ class GnupgHalyard < Formula
   url "https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-#{version}.tar.bz2"
   sha256 '5e599ad542199f3bd733eed2b88a539d1b4c3beda2dbab0ff69f1896f52e92fd'
 
+  patch_base = 'https://raw.githubusercontent.com/halyard/homebrew-formulae/master/Patches'
+
   patch do
-    url 'https://raw.githubusercontent.com/halyard/homebrew-formulae/master/Patches/gnupg-halyard-0001-makefile.patch'
+    url "#{patch_base}/gnupg-halyard-0001-makefile.patch"
     sha256 '48c15fa61a6ca03fad78db879415996ec37a7c117e186ef720c6f71cd79f8093'
   end
   patch do
-    url 'https://raw.githubusercontent.com/halyard/homebrew-formulae/master/Patches/gnupg-halyard-0002-makefile.patch'
+    url "#{patch_base}/gnupg-halyard-0002-makefile.patch"
     sha256 '899166d8e56b2c953ff6324a0f6b8b52ff5d368ce0dd3cdc45fb1a3fe8ec6859'
+  end
+  patch do
+    url "#{patch_base}/gnupg-halyard-0003-nls.patch"
+    sha256 '0476e564d850505d1a164e790f545f0aab4079d6bb60d047615c3e49aeb8ebeb'
   end
 
   depends_on 'libgpg-error'
