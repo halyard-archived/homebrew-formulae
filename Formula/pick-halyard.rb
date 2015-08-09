@@ -1,10 +1,10 @@
 require "formula"
 
 class PickHalyard < Formula
-  homepage 'http://thoughtbot.github.io/pick/'
-  version '1.1.1'
+  homepage 'https://github.com/thoughtbot/pick'
+  version '1.2.0'
   url "https://github.com/thoughtbot/pick/releases/download/v#{version}/pick-#{version}.tar.gz"
-  sha256 '2d2707d9fb6d9f8b3afffc0f02f81e7b6a02cf7823127e10b1c952adee42a306'
+  sha256 'c7593f5dde7d13177f1258b941d635761b4ea38e4c991aa7916ce4e3f581e090'
 
   def install
     system './configure', "--prefix=#{prefix}"
