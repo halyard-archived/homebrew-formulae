@@ -21,10 +21,6 @@ class GnupgHalyard < Formula
     url "#{patch_base}/gnupg-halyard-0003-nls.patch"
     sha256 '0476e564d850505d1a164e790f545f0aab4079d6bb60d047615c3e49aeb8ebeb'
   end
-  patch do
-    url "#{patch_base}/gnupg-halyard-0004-keysize.patch"
-    sha256 '08da56825c3ccb5a31200184d106e28826109d33abfdf0c75eaa9fe734c29a38'
-  end
 
   depends_on 'libgpg-error'
   depends_on 'libgcrypt'
