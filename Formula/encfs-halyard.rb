@@ -1,6 +1,6 @@
 require 'formula'
 
-class Encfs < Formula
+class EncfsHalyard < Formula
   desc 'Encrypted pass-through FUSE file system'
   homepage 'https://vgough.github.io/encfs/'
   version '1.8.1'
