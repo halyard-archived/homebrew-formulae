@@ -1,19 +1,12 @@
 require 'formula'
 
-class EncfsHalyard < Formula
+class Encfs < Formula
+  desc 'Encrypted pass-through FUSE file system'
   homepage 'https://vgough.github.io/encfs/'
-
-  stable do
-    url 'https://github.com/vgough/encfs/archive/v1.8.1.tar.gz'
-    sha1 '107e1bcc4b8fd60821a7c8dd99f0c7c37cf5619c'
-  end
-
+  version '1.8.1'
+  url "https://github.com/vgough/encfs/archive/v#{version}.tar.gz"
+  sha256 'ed6b69d8aba06382ad01116bbce2e4ad49f8de85cdf4e2fab7ee4ac82af537e9'
   head 'https://github.com/vgough/encfs.git'
-
-  bottle do
-    sha256 "4d79b4413c12e591e6de81a4ba3624f31b0937da17974fc63ac81cc82d08d6aa" => :mavericks
-    sha256 "a63c7df51551d64eee771f7f6ab712367e951bad1a5933b423256ff81eddf0b2" => :mountain_lion
-  end
 
   depends_on 'pkg-config' => :build
   depends_on 'autoconf' => :build
@@ -25,6 +18,8 @@ class EncfsHalyard < Formula
   depends_on 'rlog'
   depends_on 'openssl'
   depends_on 'xz'
+  depends_on :osxfuse
+
   needs :cxx11
 
   def install
@@ -34,7 +29,7 @@ class EncfsHalyard < Formula
                           "--prefix=#{prefix}",
                           "--with-boost=#{HOMEBREW_PREFIX}"
     system "make"
-    system "make install"
+    system "make", "install"
   end
 
   test do
@@ -46,5 +41,3 @@ class EncfsHalyard < Formula
     end
   end
 end
-
-
