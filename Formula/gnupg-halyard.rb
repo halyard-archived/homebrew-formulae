@@ -5,7 +5,7 @@ class GnupgHalyard < Formula
   version '2.1.6'
   url "https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-#{version}.tar.bz2"
   sha256 '5e599ad542199f3bd733eed2b88a539d1b4c3beda2dbab0ff69f1896f52e92fd'
-  revision 4
+  revision 5
 
   patch_base = 'https://raw.githubusercontent.com/halyard/homebrew-formulae/master/Patches'
 
@@ -36,6 +36,7 @@ class GnupgHalyard < Formula
   conflicts_with 'gpg-agent', :because => 'This GnuPG 2.1 includes gpg-agent'
   conflicts_with 'dirmngr', :because => 'This GnuPG 2.1 includes dirmngr'
   conflicts_with 'gnupg2', :because => 'This GnuPG 2.1 includes gnupg2 (duh)'
+  conflicts_with 'gnupg', :because => 'This GnuPG is better than GnuPG1'
 
   def install
     inreplace 'configure' do |s|
@@ -67,6 +68,7 @@ class GnupgHalyard < Formula
     system 'make'
     system 'make', 'check'
     system 'make', 'install'
+    ln_sf "#{bin}/gpg2", "#{bin}/gpg"
 
     # Conflicts with a manpage from the 1.x formula, and
     # gpg-zip isn't installed by this formula anyway
