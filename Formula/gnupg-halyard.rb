@@ -2,10 +2,10 @@ require 'formula'
 
 class GnupgHalyard < Formula
   homepage 'https://www.gnupg.org/'
-  version '2.1.6'
+  version '2.1.7'
   url "https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-#{version}.tar.bz2"
-  sha256 '5e599ad542199f3bd733eed2b88a539d1b4c3beda2dbab0ff69f1896f52e92fd'
-  revision 5
+  sha256 'c18a3776d47fec98892d51d28b6574ef16bf0a25eabb0956231058aaf2e7846e'
+  revision 1
 
   patch_base = 'https://raw.githubusercontent.com/halyard/homebrew-formulae/master/Patches'
 
