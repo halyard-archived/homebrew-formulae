@@ -3,7 +3,7 @@ require 'formula'
 class OpensshHalyard < Formula
   homepage 'http://www.openssh.com/'
   version '7.1p1'
-  revision 2
+  revision 3
   url "http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-#{version}.tar.gz"
   sha256 'fc0a6d2d1d063d5c66dffd952493d0cda256cad204f681de0f84ef85b2ad8428'
 
@@ -20,10 +20,7 @@ class OpensshHalyard < Formula
   end
 
   def install
-    system "autoreconf -i"
-
-    ENV.append "CPPFLAGS", "-D__APPLE_LAUNCHD__ -D__APPLE_KEYCHAIN__"
-    ENV.append "LDFLAGS", "-framework CoreFoundation -framework SecurityFoundation -framework Security"
+    ENV.append "CPPFLAGS", "-D__APPLE_SANDBOX_NAMED_EXTERNAL__" if OS.mac?
 
     args = %W[
       --with-libedit
@@ -36,28 +33,8 @@ class OpensshHalyard < Formula
 
     args << "--with-ldns" if build.with? "ldns"
 
-    # Sometimes when Apple ships security update, the libraries get
-    # updated while the headers don't. Disable header/library version
-    # check when using system openssl to cope with this situation.
-    args << "--without-openssl-header-check"
-
     system "./configure", *args
     system "make"
     system "make install"
-  end
-
-  def caveats
-    <<-EOS.undent
-      For complete functionality, please modify:
-        /System/Library/LaunchAgents/org.openbsd.ssh-agent.plist
-
-      and change ProgramArugments from
-        /usr/bin/ssh-agent
-      to
-        #{HOMEBREW_PREFIX}/bin/ssh-agent
-
-      After that, you can start storing private key passwords in
-      your OS X Keychain.
-    EOS
   end
 end
