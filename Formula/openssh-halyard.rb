@@ -3,6 +3,7 @@ require 'formula'
 class OpensshHalyard < Formula
   homepage 'http://www.openssh.com/'
   version '7.1p1'
+  revision 2
   url "http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-#{version}.tar.gz"
   sha256 'fc0a6d2d1d063d5c66dffd952493d0cda256cad204f681de0f84ef85b2ad8428'
 
@@ -10,6 +11,13 @@ class OpensshHalyard < Formula
   depends_on 'openssl'
   depends_on 'ldns' => :optional
   depends_on 'pkg-config' => :build if build.with? "ldns"
+
+  patch_base = 'https://raw.githubusercontent.com/halyard/homebrew-formulae/master/Patches'
+
+  patch do
+    url "#{patch_base}/openssh-halyard-0001-sandbox.patch"
+    sha256 '82c287053eed12ce064f0b180eac2ae995a2b97c6cc38ad1bdd7626016204205'
+  end
 
   def install
     system "autoreconf -i"
