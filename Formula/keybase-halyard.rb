@@ -10,6 +10,8 @@ class KeybaseHalyard < Formula
   depends_on 'go' => :build
 
   def install
+    inreplace 'client/go/libkb/constants_release.go', '//const', 'const'
+
     ENV['GOPATH'] = buildpath
     ENV['GOBIN'] = buildpath
     system 'mkdir', '-p', 'src/github.com/keybase/'
