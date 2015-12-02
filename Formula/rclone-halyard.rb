@@ -2,9 +2,9 @@ require 'formula'
 
 class RcloneHalyard < Formula
   homepage 'http://rclone.org'
-  version '1.19'
+  version '1.25'
   url "http://downloads.rclone.org/rclone-v#{version}-osx-amd64.zip"
-  sha256 'c50863565b898250a19e73038a3b4650cfb91342204c3b030ad06e92f1a54581'
+  sha256 'c7078a4e288e8ed2558b39439056fdceea80efccbd31e42043505644a18c943b'
 
   def install
     bin.install 'rclone'
