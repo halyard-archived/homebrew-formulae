@@ -1,7 +1,7 @@
 class GnupgLegacyHalyard < Formula
   desc "GNU Pretty Good Privacy (PGP) package"
   homepage "https://www.gnupg.org/"
-  version '1.4.9'
+  version '1.4.19'
   url "ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-#{version}.tar.bz2"
   mirror "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/gnupg/gnupg-#{version}.tar.bz2"
   mirror "http://mirror.switch.ch/ftp/mirror/gnupg/gnupg/gnupg-#{version}.tar.bz2"
