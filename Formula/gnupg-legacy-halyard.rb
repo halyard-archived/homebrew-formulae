@@ -21,7 +21,7 @@ class GnupgLegacyHalyard < Formula
     # dependency order wrong
     [bin, libexec/"gnupg"].each(&:mkpath)
     system "make", "install"
-		mv "#{bin}/gpg", "#{bin}/gpg1"
+    mv "#{bin}/gpg", "#{bin}/gpg1"
   end
 
   test do
