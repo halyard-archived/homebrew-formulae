@@ -39,9 +39,6 @@ class GnupgHalyard < Formula
       s.gsub! "PACKAGE_NAME='gnupg'", "PACKAGE_NAME='gnupg2'"
       s.gsub! "PACKAGE_TARNAME='gnupg'", "PACKAGE_TARNAME='gnupg2'"
     end
-    inreplace 'tools/gpgkey2ssh.c', 'gpg --list-keys', 'gpg2 --list-keys'
-
-    inreplace 'g10/keygen.c', 'max=4096', 'max=8192'
 
     (var/'run').mkpath
 
