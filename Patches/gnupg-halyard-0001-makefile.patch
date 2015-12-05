@@ -22,15 +22,6 @@ index 87d6820..796207f 100644
                   $(LIBGCRYPT_LIBS) $(LIBASSUAN_LIBS) $(GPG_ERROR_LIBS) \
  	         $(LIBINTL) $(LIBICONV)
  
-@@ -225,7 +225,7 @@ t_zb32_LDADD = $(t_common_ldadd)
- 
- # http tests
- t_http_SOURCES = t-http.c
--t_http_CFLAGS  = $(t_common_cflags) $(NTBTLS_CFLAGS) $(LIBGNUTLS_CFLAGS)
-+t_http_CFLAGS  = $(AM_CFLAGS) $(t_common_cflags) $(NTBTLS_CFLAGS) $(LIBGNUTLS_CFLAGS)
- t_http_LDADD   = libcommontls.a $(t_common_ldadd) \
- 	         $(NTBTLS_LIBS) $(LIBGNUTLS_LIBS) $(DNSLIBS)
- 
 diff --git a/tools/Makefile.am b/tools/Makefile.am
 index 340901a..87c98d5 100644
 --- a/tools/Makefile.am
