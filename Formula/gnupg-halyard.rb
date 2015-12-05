@@ -1,12 +1,9 @@
-require 'formula'
-
 class GnupgHalyard < Formula
-  homepage 'https://www.gnupg.org/'
-  version '2.1.10'
-  url "https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-#{version}.tar.bz2"
-  sha256 '93bd58d81771a4fa488566e5d2e13b1fd7afc86789401eb41731882abfd26cf9'
-
-  option "with-gpgsplit", "Additionally install the gpgsplit utility"
+  desc "GNU Privacy Guard: a free PGP replacement"
+  homepage "https://www.gnupg.org/"
+  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.1.10.tar.bz2"
+  mirror "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/gnupg/gnupg-2.1.9.tar.bz2"
+  sha256 "93bd58d81771a4fa488566e5d2e13b1fd7afc86789401eb41731882abfd26cf9"
 
   depends_on "pkg-config" => :build
   depends_on "npth"
@@ -17,7 +14,7 @@ class GnupgHalyard < Formula
   depends_on "libassuan"
   depends_on "pinentry"
   depends_on "libusb-compat" => :recommended
-  depends_on "readline" => :optional
+  depends_on "readline"
   depends_on "gettext"
 
   conflicts_with 'gpg-agent', :because => 'This GnuPG 2.1 includes gpg-agent'
@@ -39,9 +36,8 @@ class GnupgHalyard < Formula
       --sysconfdir=#{etc}
       --enable-symcryptrun
       --with-pinentry-pgm=#{Formula["pinentry"].opt_bin}/pinentry
+      --with-readline=#{Formula["readline"].opt_prefix}
     ]
-
-    args << "--with-readline=#{Formula["readline"].opt_prefix}" if build.with? "readline"
 
     # Adjust package name to fit our scheme of packaging both gnupg 1.x and
     # and 2.1.x and gpg-agent separately.
@@ -55,13 +51,9 @@ class GnupgHalyard < Formula
     system "make"
     system "make", "check"
     system "make", "install"
+
     ln_sf "#{bin}/gpg2", "#{bin}/gpg"
-
-
-    # Conflicts with a manpage from the 1.x formula, and
-    # gpg-zip isn't installed by this formula anyway
-    rm man1/"gpg-zip.1"
-    mv share/"info/gnupg.info", share/"info/gnupg21.info"
+    mv share/"info/gnupg.info", share/"info/gnupg2.info"
     mv man7/"gnupg.7", man7/"gnupg2.7"
   end
 
