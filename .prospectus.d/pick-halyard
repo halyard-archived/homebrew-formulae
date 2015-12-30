@@ -1,0 +1,12 @@
+item do
+  expected do
+    github_release
+    repo 'thoughtbot/pick'
+    regex /^v(.*)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'pick-halyard'
+  end
+end

@@ -1,0 +1,12 @@
+item do
+  expected do
+    github_tag
+    repo 'spotify/sparkey'
+    regex /^sparkey-([\d.]*)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'sparkey-halyard'
+  end
+end

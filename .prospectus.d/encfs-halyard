@@ -1,0 +1,12 @@
+item do
+  expected do
+    github_release
+    repo 'vgough/encfs'
+    regex /^v(.*)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'encfs-halyard'
+  end
+end

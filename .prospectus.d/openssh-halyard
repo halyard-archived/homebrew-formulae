@@ -1,0 +1,12 @@
+item do
+  expected do
+    github_tag
+    repo 'openssh/openssh-portable'
+    regex /^V_(\d+)_(\d+)_P(\d+)$/, '\1.\2p\3'
+  end
+
+  actual do
+    homebrew_formula
+    name 'openssh-halyard'
+  end
+end

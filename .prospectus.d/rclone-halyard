@@ -1,0 +1,12 @@
+item do
+  expected do
+    github_release
+    repo 'ncw/rclone'
+    regex /^v(.*)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'rclone-halyard'
+  end
+end
