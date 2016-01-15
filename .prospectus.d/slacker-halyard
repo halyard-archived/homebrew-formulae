@@ -1,0 +1,11 @@
+item do
+  expected do
+    github_tag
+    repo 'akerl/slacker'
+  end
+
+  actual do
+    homebrew_formula
+    name 'slacker-halyard'
+  end
+end
