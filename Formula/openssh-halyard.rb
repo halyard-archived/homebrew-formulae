@@ -16,7 +16,7 @@ class OpensshHalyard < Formula
 
   patch do
     url "#{patch_base}/openssh-halyard-0001-sandbox.patch"
-    sha256 '82c287053eed12ce064f0b180eac2ae995a2b97c6cc38ad1bdd7626016204205'
+    sha256 '0963bcaeabfc8a1b8db7de1a0901725b7e18d7d807a7ee211b963e4cf34d4b91'
   end
 
   def install
