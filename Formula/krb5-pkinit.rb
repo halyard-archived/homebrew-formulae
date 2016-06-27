@@ -6,6 +6,11 @@ class Krb5Pkinit < Formula
 
   keg_only :provided_by_osx
 
+  bottle do
+    root_url "https://github.com/halyard/homebrew-formulae/releases/download/krb5-pkinit-1.14.2"
+    sha256 "5168c2c12be410fe3c6ced1318086036fb41e2492e6a95e01bea29c6f2a6726c" => :el_capitan
+  end
+
   depends_on "openssl"
   depends_on "bison" unless OS.mac?
 
