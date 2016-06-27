@@ -2,7 +2,7 @@ class Krb5Pkinit < Formula
   desc "Network authentication protocol"
   homepage "http://web.mit.edu/kerberos/"
   url "http://web.mit.edu/kerberos/dist/krb5/1.14/krb5-1.14.tar.gz"
-  sha256 "eb3f1924f154b2b7a26ad1b9463c8979688b7321fc9adb7d46b5bf3b1e5c228f"
+  sha256 "cedb07fad8331e3ff2983d26e977a2ddba622f379c2b19bfea85bd695930f9e9"
 
   keg_only :provided_by_osx
 
