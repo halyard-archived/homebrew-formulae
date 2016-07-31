@@ -13,9 +13,11 @@ class GnupgHalyard < Formula
   depends_on "libksba"
   depends_on "libassuan"
   depends_on "pinentry"
-  depends_on "libusb-compat" => :recommended
-  depends_on "readline"
   depends_on "gettext"
+  depends_on "adns"
+  depends_on "readline"
+  depends_on "libusb-compat" => :recommended
+  depends_on "libusb" => :linked if build.with? "libusb-compat"
 
   conflicts_with 'gpg-agent', :because => 'This GnuPG 2.1 includes gpg-agent'
   conflicts_with 'dirmngr', :because => 'This GnuPG 2.1 includes dirmngr'
@@ -23,9 +25,9 @@ class GnupgHalyard < Formula
   conflicts_with 'gnupg', :because => 'This GnuPG is better than GnuPG1'
 
   def install
-    (var/"run").mkpath
+    # need for -lintl already fixed upstream; remove for gnupg > 2.1.14
+    ENV.append "LDFLAGS", "-lresolv -lintl"
 
-    ENV.append "LDFLAGS", "-lresolv"
     ENV["gl_cv_absolute_stdint_h"] = "#{MacOS.sdk_path}/usr/include/stdint.h"
 
     args = %W[
@@ -55,6 +57,10 @@ class GnupgHalyard < Formula
     ln_sf "#{bin}/gpg2", "#{bin}/gpg"
     mv share/"info/gnupg.info", share/"info/gnupg2.info"
     mv man7/"gnupg.7", man7/"gnupg2.7"
+  end
+
+  def post_install
+    (var/"run").mkpath
   end
 
   test do
