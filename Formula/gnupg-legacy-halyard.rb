@@ -1,11 +1,11 @@
 class GnupgLegacyHalyard < Formula
   desc "GNU Pretty Good Privacy (PGP) package"
   homepage "https://www.gnupg.org/"
-  version '1.4.20'
+  version '1.4.21'
   url "ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-#{version}.tar.bz2"
   mirror "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/gnupg/gnupg-#{version}.tar.bz2"
   mirror "http://mirror.switch.ch/ftp/mirror/gnupg/gnupg/gnupg-#{version}.tar.bz2"
-  sha256 "04988b1030fa28ddf961ca8ff6f0f8984e0cddcb1eb02859d5d8fe0fe237edcc"
+  sha256 "6b47a3100c857dcab3c60e6152e56a997f2c7862c1b8b2b25adf3884a1ae2276"
 
   depends_on "curl" if MacOS.version <= :mavericks
 
