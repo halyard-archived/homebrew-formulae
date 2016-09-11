@@ -3,9 +3,9 @@ require 'formula'
 class EncfsHalyard < Formula
   desc 'Encrypted pass-through FUSE file system'
   homepage 'https://vgough.github.io/encfs/'
-  version '1.8.1'
+  version '1.9'
   url "https://github.com/vgough/encfs/archive/v#{version}.tar.gz"
-  sha256 'ed6b69d8aba06382ad01116bbce2e4ad49f8de85cdf4e2fab7ee4ac82af537e9'
+  sha256 '30d2db1555ec359082046748d278018b8a246dc49c0442291c5671da0486f4bf'
   head 'https://github.com/vgough/encfs.git'
 
   depends_on 'pkg-config' => :build
