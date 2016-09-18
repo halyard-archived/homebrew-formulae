@@ -1,10 +1,7 @@
 class GnupgLegacyHalyard < Formula
   desc "GNU Pretty Good Privacy (PGP) package"
   homepage "https://www.gnupg.org/"
-  version '1.4.21'
-  url "ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-#{version}.tar.bz2"
-  mirror "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/gnupg/gnupg-#{version}.tar.bz2"
-  mirror "http://mirror.switch.ch/ftp/mirror/gnupg/gnupg/gnupg-#{version}.tar.bz2"
+  url "ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.21.tar.bz2"
   sha256 "6b47a3100c857dcab3c60e6152e56a997f2c7862c1b8b2b25adf3884a1ae2276"
 
   depends_on "curl" if MacOS.version <= :mavericks
@@ -35,7 +32,7 @@ class GnupgLegacyHalyard < Formula
       Expire-Date: 0
     EOS
     system bin/"gpg", "--batch", "--gen-key", "gen-key-script"
-    (testpath/"test.txt").write ("Hello World!")
+    (testpath/"test.txt").write "Hello World!"
     system bin/"gpg", "--armor", "--sign", "test.txt"
     system bin/"gpg", "--verify", "test.txt.asc"
   end
