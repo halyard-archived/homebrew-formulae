@@ -1,13 +1,12 @@
 class KeybaseHalyard < Formula
-  desc 'Keybase'
-  homepage 'https://keybase.io/'
+  desc "Keybase"
+  homepage "https://keybase.io/"
 
-  version '1.0.17'
-  url "https://github.com/keybase/client/archive/v#{version}.tar.gz"
-  sha256 '937b4bc61c889ef3982a5352d8a49cda8a4f4db28732d4cb21df1fe20128399c'
-  head 'https://github.com/keybase/client.git'
+  url "https://github.com/keybase/client/archive/v1.0.17.tar.gz"
+  sha256 "937b4bc61c889ef3982a5352d8a49cda8a4f4db28732d4cb21df1fe20128399c"
+  head "https://github.com/keybase/client.git"
 
-  depends_on 'go' => :build
+  depends_on "go" => :build
 
   def install
     ENV["GOPATH"] = buildpath
