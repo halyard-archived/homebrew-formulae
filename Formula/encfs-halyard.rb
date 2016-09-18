@@ -1,23 +1,20 @@
-require 'formula'
-
 class EncfsHalyard < Formula
-  desc 'Encrypted pass-through FUSE file system'
-  homepage 'https://vgough.github.io/encfs/'
-  version '1.9'
-  url "https://github.com/vgough/encfs/archive/v#{version}.tar.gz"
-  sha256 '30d2db1555ec359082046748d278018b8a246dc49c0442291c5671da0486f4bf'
-  head 'https://github.com/vgough/encfs.git'
+  desc "Encrypted pass-through FUSE file system"
+  homepage "https://vgough.github.io/encfs/"
+  url "https://github.com/vgough/encfs/archive/v1.9.tar.gz"
+  sha256 "30d2db1555ec359082046748d278018b8a246dc49c0442291c5671da0486f4bf"
+  head "https://github.com/vgough/encfs.git"
 
-  depends_on 'pkg-config' => :build
-  depends_on 'autoconf' => :build
-  depends_on 'automake' => :build
-  depends_on 'libtool' => :build
-  depends_on 'intltool' => :build
-  depends_on 'gettext' => :build
-  depends_on 'boost'
-  depends_on 'rlog'
-  depends_on 'openssl'
-  depends_on 'xz'
+  depends_on "pkg-config" => :build
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
+  depends_on "intltool" => :build
+  depends_on "gettext" => :build
+  depends_on "boost"
+  depends_on "rlog"
+  depends_on "openssl"
+  depends_on "xz"
 
   needs :cxx11
 
