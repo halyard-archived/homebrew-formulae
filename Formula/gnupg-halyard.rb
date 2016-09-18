@@ -1,8 +1,7 @@
 class GnupgHalyard < Formula
   desc "GNU Privacy Guard: a free PGP replacement"
   homepage "https://www.gnupg.org/"
-  version '2.1.15'
-  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-#{version}.tar.bz2"
+  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.1.15.tar.bz2"
   sha256 "c28c1a208f1b8ad63bdb6b88d252f6734ff4d33de6b54e38494b11d49e00ffdd"
 
   depends_on "pkg-config" => :build
@@ -19,10 +18,10 @@ class GnupgHalyard < Formula
   depends_on "libusb-compat" => :recommended
   depends_on "libusb" => :linked if build.with? "libusb-compat"
 
-  conflicts_with 'gpg-agent', :because => 'This GnuPG 2.1 includes gpg-agent'
-  conflicts_with 'dirmngr', :because => 'This GnuPG 2.1 includes dirmngr'
-  conflicts_with 'gnupg2', :because => 'This GnuPG 2.1 includes gnupg2 (duh)'
-  conflicts_with 'gnupg', :because => 'This GnuPG is better than GnuPG1'
+  conflicts_with "gpg-agent", :because => "This GnuPG 2.1 includes gpg-agent"
+  conflicts_with "dirmngr", :because => "This GnuPG 2.1 includes dirmngr"
+  conflicts_with "gnupg2", :because => "This GnuPG 2.1 includes gnupg2 (duh)"
+  conflicts_with "gnupg", :because => "This GnuPG is better than GnuPG1"
 
   def install
     # need for -lintl already fixed upstream; remove for gnupg > 2.1.14
