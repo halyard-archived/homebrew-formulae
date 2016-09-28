@@ -1,6 +1,6 @@
 dependencies:
   override:
-  - git clone https://github.com/Homebrew/brew.git ~/brew
+  - git clone https://github.com/Linuxbrew/brew.git ~/.linuxbrew
 test:
   override:
-  - brew audit Formula/*
+  - ~/.linuxbrew/bin/brew audit ./Formula/*
