@@ -2,7 +2,7 @@ item do
   expected do
     url_xpath
     url 'https://www.gnupg.org/download/index.html'
-    xpath '//*[@id="text-1-1"]/table/tbody[1]/tr[2]/td[2]'
+    xpath '//*[@id="text-1-1"]/table/tbody[1]/tr[1]/td[2]'
   end
 
   actual do
