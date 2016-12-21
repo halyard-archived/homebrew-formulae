@@ -1,8 +1,8 @@
 class GnupgHalyard < Formula
   desc "GNU Privacy Guard: a free PGP replacement"
   homepage "https://www.gnupg.org/"
-  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.1.16.tar.bz2"
-  sha256 "49b9a6a6787ad00d4d2d69d8c7ee8905923782583f06078a064a0c80531d8844"
+  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.1.17.tar.bz2"
+  sha256 "c5dc54db432209fa8f9bdb071c8fb60a765ff28e363150e30bdd4543160243cb"
 
   depends_on "pkg-config" => :build
   depends_on "npth"
