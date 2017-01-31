@@ -1,0 +1,12 @@
+item do
+  expected do
+    github_release
+    repo 'hashicorp/terraform'
+    regex /v([\d.]+)/
+  end
+
+  actual do
+    homebrew_formula
+    name 'terraform-halyard'
+  end
+end
