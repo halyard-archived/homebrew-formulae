@@ -1,5 +1,3 @@
-require "language/go"
-
 class TerraformHalyard < Formula
   desc "Tool to build, change, and version infrastructure"
   homepage "https://www.terraform.io/"
