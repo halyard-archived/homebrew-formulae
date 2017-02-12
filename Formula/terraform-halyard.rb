@@ -3,8 +3,8 @@ require "language/go"
 class TerraformHalyard < Formula
   desc "Tool to build, change, and version infrastructure"
   homepage "https://www.terraform.io/"
-  _version = '0.8.6'
-  url "https://releases.hashicorp.com/terraform/#{_version}/terraform_#{_version}_darwin_amd64.zip"
+  version "0.8.6"
+  url "https://releases.hashicorp.com/terraform/#{version}/terraform_#{version}_darwin_amd64.zip"
   sha256 "0b80dedb16ab6583afcf66e9b03d3714fbfa44b827094420956d807b710e4fd6"
 
   def install
