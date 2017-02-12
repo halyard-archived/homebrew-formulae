@@ -3,80 +3,12 @@ require "language/go"
 class TerraformHalyard < Formula
   desc "Tool to build, change, and version infrastructure"
   homepage "https://www.terraform.io/"
-  url "https://github.com/hashicorp/terraform/archive/v0.8.5.tar.gz"
-  sha256 "3d59b81350fcb3a5ca5ac06a19275c2941f67d00989630774faa659908098ebf"
-  head "https://github.com/hashicorp/terraform.git"
-
-  depends_on "go" => :build
-
-  go_resource "github.com/mitchellh/gox" do
-    url "https://github.com/mitchellh/gox.git",
-        :revision => "c9740af9c6574448fd48eb30a71f964014c7a837"
-  end
-
-  go_resource "github.com/mitchellh/iochan" do
-    url "https://github.com/mitchellh/iochan.git",
-        :revision => "87b45ffd0e9581375c491fef3d32130bb15c5bd7"
-  end
-
-  go_resource "github.com/kisielk/errcheck" do
-    url "https://github.com/kisielk/errcheck.git",
-        :revision => "9c1292e1c962175f76516859f4a88aabd86dc495"
-  end
-
-  go_resource "github.com/kisielk/gotool" do
-    url "https://github.com/kisielk/gotool.git",
-        :revision => "5e136deb9b893bbe6c8f23236ff4378b7a8a0dbb"
-  end
-
-  go_resource "golang.org/x/tools" do
-    url "https://go.googlesource.com/tools.git",
-        :revision => "f8ed2e405fdcbb42c55233531ad98721e6d1cb3e"
-  end
+  _version = '0.8.6'
+  url "https://releases.hashicorp.com/terraform/#{_version}/terraform_#{_version}_darwin_amd64.zip"
+  sha256 "0b80dedb16ab6583afcf66e9b03d3714fbfa44b827094420956d807b710e4fd6"
 
   def install
-    ENV["GOPATH"] = buildpath
-    # For the gox buildtool used by terraform, which doesn't need to
-    # get installed permanently
-    ENV.append_path "PATH", buildpath
-
-    terrapath = buildpath/"src/github.com/hashicorp/terraform"
-    terrapath.install Dir["*"]
-    Language::Go.stage_deps resources, buildpath/"src"
-
-    cd "src/github.com/mitchellh/gox" do
-      system "go", "build"
-      buildpath.install "gox"
-    end
-
-    cd "src/golang.org/x/tools/cmd/stringer" do
-      ENV.deparallelize { system "go", "build" }
-      buildpath.install "stringer"
-    end
-
-    cd "src/github.com/kisielk/errcheck" do
-      system "go", "build"
-      buildpath.install "errcheck"
-    end
-
-    cd terrapath do
-      # v0.6.12 - source contains tests which fail if these environment variables are set locally.
-      ENV.delete "AWS_ACCESS_KEY"
-      ENV.delete "AWS_SECRET_KEY"
-
-      # Runs format check and test suite via makefile
-      ENV.deparallelize { system "make", "test", "vet" }
-
-      # Generate release binary
-      arch = MacOS.prefer_64_bit? ? "amd64" : "386"
-      ENV["XC_OS"] = "darwin"
-      ENV["XC_ARCH"] = arch
-      system "make", "bin"
-
-      # Install release binary
-      bin.install "pkg/darwin_#{arch}/terraform"
-      zsh_completion.install "contrib/zsh-completion/_terraform"
-    end
+    bin.install 'terraform'
   end
 
   test do
