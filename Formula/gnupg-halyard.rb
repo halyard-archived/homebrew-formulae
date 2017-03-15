@@ -15,20 +15,21 @@ class GnupgHalyard < Formula
   depends_on "gettext"
   depends_on "adns"
   depends_on "readline"
-  depends_on "libusb-compat" => :recommended
-  depends_on "libusb" => :linked if build.with? "libusb-compat"
+  depends_on "libusb" => :recommended
 
   conflicts_with "gpg-agent", :because => "This GnuPG 2.1 includes gpg-agent"
   conflicts_with "dirmngr", :because => "This GnuPG 2.1 includes dirmngr"
   conflicts_with "gnupg2", :because => "This GnuPG 2.1 includes gnupg2 (duh)"
   conflicts_with "gnupg", :because => "This GnuPG is better than GnuPG1"
 
+  patch_base = "https://raw.githubusercontent.com/halyard/homebrew-formulae/master/Patches"
+
+  patch do
+    url "#{patch_base}/gnupg-halyard-0001-sandbox.patch"
+    sha256 "f62f76fde0b699851877545802e9ebf28fde52797a71e418749f731afb4fbc68"
+  end
+
   def install
-    # need for -lintl already fixed upstream; remove for gnupg > 2.1.14
-    ENV.append "LDFLAGS", "-lresolv -lintl"
-
-    ENV["gl_cv_absolute_stdint_h"] = "#{MacOS.sdk_path}/usr/include/stdint.h"
-
     args = %W[
       --disable-dependency-tracking
       --disable-silent-rules
@@ -50,8 +51,8 @@ class GnupgHalyard < Formula
     system "./configure", *args
 
     system "make"
-    system "make", "check"
     system "make", "install"
+    system "make", "check"
 
     ln_sf "#{bin}/gpg2", "#{bin}/gpg"
     mv share/"info/gnupg.info", share/"info/gnupg2.info"
