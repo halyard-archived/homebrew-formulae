@@ -1,9 +1,9 @@
 class RcloneHalyard < Formula
   desc "File syncing tool"
   homepage "http://rclone.org"
-  version "1.35"
+  version "1.36"
   url "http://downloads.rclone.org/rclone-v#{version}-osx-amd64.zip"
-  sha256 "92c9db21f252b971c0b2e361248449aa3a14200e186efc51eef28938b4adfa90"
+  sha256 "3ec7d5658258ad99480ed7b07d552fe4d5d01677fe765f890e0cc1ed08c82b26"
 
   def install
     bin.install "rclone"
