@@ -1,9 +1,9 @@
 class OpensshHalyard < Formula
   desc "SSH client and server"
   homepage "http://www.openssh.com/"
-  version "7.4p1"
+  version "7.5p1"
   url "http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-#{version}.tar.gz"
-  sha256 "1b1fc4a14e2024293181924ed24872e6f2e06293f3e8926a376b8aec481f19d1"
+  sha256 "9846e3c5fab9f0547400b4d2c017992f914222b3fd1f8eee6c7dc6bc5e59f9f0"
   revision 1
 
   depends_on "autoconf" => :build
