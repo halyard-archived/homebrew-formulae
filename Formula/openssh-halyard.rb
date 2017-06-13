@@ -9,7 +9,7 @@ class OpensshHalyard < Formula
   depends_on "autoconf" => :build
   depends_on "openssl"
   depends_on "ldns" => :optional
-  depends_on "pkg-config" => :build if build.with? "ldns"
+  depends_on "pkg-config" => :build
 
   patch_base = "https://raw.githubusercontent.com/halyard/homebrew-formulae/master/Patches"
 
