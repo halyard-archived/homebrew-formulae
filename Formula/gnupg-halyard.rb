@@ -15,18 +15,18 @@ class GnupgHalyard < Formula
   depends_on "gettext"
   depends_on "adns"
   depends_on "readline"
-  depends_on "libusb" => :recommended
+  depends_on "libusb"
 
   conflicts_with "gpg-agent", :because => "This GnuPG 2.1 includes gpg-agent"
   conflicts_with "dirmngr", :because => "This GnuPG 2.1 includes dirmngr"
   conflicts_with "gnupg2", :because => "This GnuPG 2.1 includes gnupg2 (duh)"
   conflicts_with "gnupg", :because => "This GnuPG is better than GnuPG1"
 
-  patch_base = "https://raw.githubusercontent.com/halyard/homebrew-formulae/master/Patches"
-
+  # Upstream commit 16 May 2017 "Suppress error for card availability check."
+  # See https://dev.gnupg.org/rGa8dd96826f8484c0ae93c954035b95c2a75c80f2
   patch do
-    url "#{patch_base}/gnupg-halyard-0001-sandbox.patch"
-    sha256 "f62f76fde0b699851877545802e9ebf28fde52797a71e418749f731afb4fbc68"
+    url "https://dev.gnupg.org/rGa8dd96826f8484c0ae93c954035b95c2a75c80f2?diff=1"
+    sha256 "3adb7fd095f8bc29fd550bf499f5f198dd20e3d5c97d5bcb79e91d95fd53a781"
   end
 
   def install
@@ -41,29 +41,42 @@ class GnupgHalyard < Formula
       --with-readline=#{Formula["readline"].opt_prefix}
     ]
 
-    # Adjust package name to fit our scheme of packaging both gnupg 1.x and
-    # and 2.1.x and gpg-agent separately.
-    inreplace "configure" do |s|
-      s.gsub! "PACKAGE_NAME='gnupg'", "PACKAGE_NAME='gnupg2'"
-      s.gsub! "PACKAGE_TARNAME='gnupg'", "PACKAGE_TARNAME='gnupg2'"
-    end
-
     system "./configure", *args
-
     system "make"
     system "make", "install"
     system "make", "check"
 
-    ln_sf "#{bin}/gpg2", "#{bin}/gpg"
-    mv share/"info/gnupg.info", share/"info/gnupg2.info"
-    mv man7/"gnupg.7", man7/"gnupg2.7"
+    # Add symlinks from gpg2 to unversioned executables, replacing gpg 1.x.
+    bin.install_symlink "gpg2" => "gpg"
+    bin.install_symlink "gpgv2" => "gpgv"
+    man1.install_symlink "gpg2.1" => "gpg.1"
+    man1.install_symlink "gpgv2.1" => "gpgv.1"
   end
 
   def post_install
     (var/"run").mkpath
+    quiet_system "killall", "gpg-agent"
   end
 
   test do
-    system "#{bin}/gpgconf"
+    (testpath/"batch.gpg").write <<-EOS.undent
+      Key-Type: RSA
+      Key-Length: 2048
+      Subkey-Type: RSA
+      Subkey-Length: 2048
+      Name-Real: Testing
+      Name-Email: testing@foo.bar
+      Expire-Date: 1d
+      %no-protection
+      %commit
+    EOS
+    begin
+      system bin/"gpg", "--batch", "--gen-key", "batch.gpg"
+      (testpath/"test.txt").write "Hello World!"
+      system bin/"gpg", "--detach-sign", "test.txt"
+      system bin/"gpg", "--verify", "test.txt.sig"
+    ensure
+      system bin/"gpgconf", "--kill", "gpg-agent"
+    end
   end
 end
