@@ -2,9 +2,9 @@ class SpeculateHalyard < Formula
   desc "Tool for assuming roles in AWS accounts"
   homepage "https://github.com/akerl/speculate"
 
-  version "0.0.4"
+  version "0.0.5"
   url "https://github.com/akerl/speculate/releases/download/v#{version}/speculate_darwin"
-  sha256 "0c440ed693e3a3c96440953816424137cd499d5d4ce60cde49d0bf9771cbf6c4"
+  sha256 "a85e95c4c5b9a1fc832166abd60682d153d573069268331ed0da0cadbf968e17"
 
   head do
     url "https://github.com/akerl/speculate.git"
