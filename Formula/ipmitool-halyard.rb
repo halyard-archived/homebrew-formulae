@@ -6,13 +6,6 @@ class IpmitoolHalyard < Formula
   sha256 "0c1ba3b1555edefb7c32ae8cd6a3e04322056bc087918f07189eeedfc8b81e01"
   revision 1
 
-  bottle do
-    cellar :any
-    sha256 "09ab8411437d99d24051e033082c4f0868902fc6653010bc833a68c17dfc2577" => :sierra
-    sha256 "79028e7c9ed529b3ec4bac14933350326320c24aeed1b172ea07f2fc39020720" => :el_capitan
-    sha256 "df7ecf265d230af6f9a480348d386a9330149ac7e459f6cc98f47438f355516a" => :yosemite
-  end
-
   depends_on "openssl"
 
   # https://sourceforge.net/p/ipmitool/bugs/433/#89ea and
