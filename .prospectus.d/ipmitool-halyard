@@ -1,0 +1,13 @@
+item do
+  expected do
+    url_xpath
+    url 'https://sourceforge.net/projects/ipmitool/'
+    xpath '//*[@id="download_button"]/a[1]/span/small'
+    regex /^ipmitool-([\d.]+)\.tar\.bz2$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'ipmitool-halyard'
+  end
+end
