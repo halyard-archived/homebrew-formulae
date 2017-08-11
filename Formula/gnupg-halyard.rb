@@ -22,13 +22,6 @@ class GnupgHalyard < Formula
   conflicts_with "gnupg2", :because => "This GnuPG 2.1 includes gnupg2 (duh)"
   conflicts_with "gnupg", :because => "This GnuPG is better than GnuPG1"
 
-  # Upstream commit 16 May 2017 "Suppress error for card availability check."
-  # See https://dev.gnupg.org/rGa8dd96826f8484c0ae93c954035b95c2a75c80f2
-  patch do
-    url "https://dev.gnupg.org/rGa8dd96826f8484c0ae93c954035b95c2a75c80f2?diff=1"
-    sha256 "3adb7fd095f8bc29fd550bf499f5f198dd20e3d5c97d5bcb79e91d95fd53a781"
-  end
-
   def install
     args = %W[
       --disable-dependency-tracking
