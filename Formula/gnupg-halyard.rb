@@ -32,18 +32,14 @@ class GnupgHalyard < Formula
       --enable-symcryptrun
       --with-pinentry-pgm=#{Formula["pinentry"].opt_bin}/pinentry
       --with-readline=#{Formula["readline"].opt_prefix}
+      --enable-large-secmem
+      --enable-all-tests
     ]
 
     system "./configure", *args
     system "make"
-    system "make", "install"
     system "make", "check"
-
-    # Add symlinks from gpg2 to unversioned executables, replacing gpg 1.x.
-    bin.install_symlink "gpg2" => "gpg"
-    bin.install_symlink "gpgv2" => "gpgv"
-    man1.install_symlink "gpg2.1" => "gpg.1"
-    man1.install_symlink "gpgv2.1" => "gpgv.1"
+    system "make", "install"
   end
 
   def post_install
