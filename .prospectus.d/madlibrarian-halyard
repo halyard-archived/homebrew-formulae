@@ -1,12 +1,12 @@
 item do
   expected do
     github_tag
-    repo 'akerl/voyager'
+    repo 'akerl/madlibrarian'
     regex /^([\d.]+)$/
   end
 
   actual do
     homebrew_formula
-    name 'voyager-halyard'
+    name 'madlibrarian-halyard'
   end
 end
