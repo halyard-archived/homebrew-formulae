@@ -3,6 +3,7 @@ item do
     github_tag
     repo 'akerl/voyager'
     regex /^([\d.]+)$/
+    filter /^([\d.]+)$/
   end
 
   actual do

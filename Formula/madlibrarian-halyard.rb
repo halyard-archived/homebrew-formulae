@@ -2,9 +2,9 @@ class MadlibrarianHalyard < Formula
   desc "Generate quotes from template files"
   homepage "https://github.com/akerl/madlibrarian"
 
-  version "0.0.1"
+  version "0.0.3"
   url "https://github.com/akerl/madlibrarian/releases/download/#{version}/madlibrarian_darwin"
-  sha256 "6521c1c6e0ddc986200847ad549e90e2653f3b8f742d1327547c4209ccab7b2f"
+  sha256 "17f6f55056dc423514cdd472bcf18cb83dcc4db1d5ada0b5a5520806df160c3d"
 
   head do
     url "https://github.com/akerl/madlibrarian.git"
