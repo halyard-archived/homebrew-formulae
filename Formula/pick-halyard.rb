@@ -1,9 +1,9 @@
 class PickHalyard < Formula
   desc "Command line arg picker"
   homepage "https://github.com/thoughtbot/pick"
-  version = "1.8.0"
+  version = "1.9.0"
   url "https://github.com/thoughtbot/pick/releases/download/v#{version}/pick-#{version}.tar.gz"
-  sha256 "7834d3aef9e575ce07414f961d1f024776b49bb23c5dc3b7bb8f6b734131067d"
+  sha256 "97d3f310eb7de44fbe50ad3451c49d859d607fa14acd0c584aafae97eea65267"
 
   def install
     system "./configure", "--prefix=#{prefix}"
