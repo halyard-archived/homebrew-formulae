@@ -4,6 +4,12 @@ class GnupgHalyard < Formula
   url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.2.1.tar.bz2"
   sha256 "34d70cd65b9c95f3f2f90a9f5c1e0b6a0fe039a8d685e2d66d69c33d1cbf62fb"
 
+  head do
+    url "https://dev.gnupg.org/source/gnupg.git"
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+  end
+
   depends_on "pkg-config" => :build
   depends_on "npth"
   depends_on "gnutls"
@@ -36,6 +42,11 @@ class GnupgHalyard < Formula
       --enable-all-tests
     ]
 
+    if build.head?
+      args << '--enable-maintainer-mode'
+      system './autogen.sh'
+      system 'autoconf'
+    end
     system "./configure", *args
     system "make"
     system "make", "check"
