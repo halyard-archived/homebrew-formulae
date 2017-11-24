@@ -1,9 +1,9 @@
 class EtcherHalyard < Formula
   desc "Etcher"
   homepage "https://etcher.io/cli/"
-  version "1.1.2"
+  version "1.2.0"
   url "https://github.com/resin-io/etcher/releases/download/v#{version}/Etcher-cli-#{version}-darwin-x64.tar.gz"
-  sha256 "3fd81af71fa3c6b8d8d07a7ca2895219de62b23057182b3d33c95de1e5499644"
+  sha256 "40957424f3381abe6f0c421dbad5666be74af219ac0af968c74fc22fb7a2a528"
 
   def install
     bin.install "etcher"
