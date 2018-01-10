@@ -1,9 +1,9 @@
 item do
   expected do
     url_xpath
-    url 'https://sourceforge.net/projects/ipmitool/'
-    xpath '//*[@id="download_button"]/a[1]/span/small'
-    regex /^ipmitool-([\d.]+)\.tar\.bz2$/
+    url 'https://sourceforge.net/projects/ipmitool/files/?source=navbar'
+    xpath '//*[@id="files"]/div[2]/div/a[1]/span[2]'
+    regex /^ipmitool-([\d.]+)\.tar\.bz2 \([\d.]+ kB\)$/
   end
 
   actual do
