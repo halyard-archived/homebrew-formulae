@@ -1,8 +1,8 @@
 class EncfsHalyard < Formula
   desc "Encrypted pass-through FUSE file system"
   homepage "https://vgough.github.io/encfs/"
-  url "https://github.com/vgough/encfs/archive/v1.9.2.tar.gz"
-  sha256 "cd9e972cd9565cdc26473c86d2c77c98de31fc6f604fa7d149dd5d6e35d46eaa"
+  url "https://github.com/vgough/encfs/archive/v1.9.4.tar.gz"
+  sha256 "20656b4ead58ebd8d5f49a5c346b59e70dc2dc31220159e5b5a115bfa1bc40d6"
   head "https://github.com/vgough/encfs.git"
 
   depends_on "cmake" => :build
