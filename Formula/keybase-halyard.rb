@@ -2,8 +2,8 @@ class KeybaseHalyard < Formula
   desc "Keybase"
   homepage "https://keybase.io/"
 
-  url "https://github.com/keybase/client/archive/v1.0.40.tar.gz"
-  sha256 "79f11737b3bdc279b34d2b978584b3c12e1c24ccdeb3b86dbf7670aa9c634913"
+  url "https://github.com/keybase/client/archive/v1.0.41.tar.gz"
+  sha256 "53687dc47810ab958cea41053a25b02788a54294a4d6b7191a4c60d6926b866e"
   head "https://github.com/keybase/client.git"
 
   depends_on "go" => :build
