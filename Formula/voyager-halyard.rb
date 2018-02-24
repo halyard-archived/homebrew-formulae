@@ -4,7 +4,7 @@ class VoyagerHalyard < Formula
 
   version "0.0.2"
   url "https://github.com/akerl/voyager/releases/download/#{version}/voyager_darwin"
-  sha256 "26a9960304268b410f7b29267ba0a4d2850c07b4839bdb7258fb3ea1cc25f113"
+  sha256 "da8d6e42fa134d391031dd3a945d8f3d8eb93de2fc757b4f2c28462a6b71a348"
 
   head do
     url "https://github.com/akerl/voyager.git"
