@@ -2,8 +2,8 @@ class SparkeyHalyard < Formula
   desc "Storage library"
   homepage "https://github.com/spotify/sparkey"
 
-  url "https://github.com/spotify/sparkey/archive/sparkey-0.2.0.tar.gz"
-  sha256 "a06caf23c64e7ebae5b8b67272b21ab4c57f21a66d190bfe0a95f5af1dc69154"
+  url "https://github.com/spotify/sparkey/archive/sparkey-1.0.0.tar.gz"
+  sha256 "d607fb816d71d97badce6301dd56e2538ef2badb6530c0a564b1092788f8f774"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
