@@ -1,9 +1,9 @@
 class TerraformHalyard < Formula
   desc "Tool to build, change, and version infrastructure"
   homepage "https://www.terraform.io/"
-  version "0.11.4"
+  version "0.11.5"
   url "https://releases.hashicorp.com/terraform/#{version}/terraform_#{version}_darwin_amd64.zip"
-  sha256 "c328b8d60840b96641f519deb85601cb1f2cce458c7bdb7786712471234ac0c5"
+  sha256 "0af78baf9b1a249544cc0b17d6b7abb32cc513a554d1f7dcc85c873e2af93586"
 
   def install
     bin.install "terraform"
