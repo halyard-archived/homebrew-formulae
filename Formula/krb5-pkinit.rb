@@ -9,7 +9,7 @@ class Krb5Pkinit < Formula
     sha256 "5168c2c12be410fe3c6ced1318086036fb41e2492e6a95e01bea29c6f2a6726c" => :el_capitan
   end
 
-  keg_only :provided_by_osx
+  keg_only :provided_by_macos
 
   depends_on "openssl"
   depends_on "bison" unless OS.mac?
