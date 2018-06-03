@@ -2,8 +2,8 @@ class VoyagerHalyard < Formula
   desc "Helper for connecting to AWS accounts"
   homepage "https://github.com/akerl/voyager"
 
+  url "https://github.com/akerl/voyager/releases/download/0.5.0/voyager_darwin"
   version "0.5.0"
-  url "https://github.com/akerl/voyager/releases/download/#{version}/voyager_darwin"
   sha256 "4f3fc15b7114e8c4589407284b9b28d0bdd7143499f707fe298bb331bbdaa49a"
 
   head do

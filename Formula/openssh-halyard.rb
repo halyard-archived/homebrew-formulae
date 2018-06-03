@@ -1,8 +1,8 @@
 class OpensshHalyard < Formula
   desc "SSH client and server"
   homepage "http://www.openssh.com/"
+  url "http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-7.7p1.tar.gz"
   version "7.7p1"
-  url "http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-#{version}.tar.gz"
   sha256 "d73be7e684e99efcd024be15a30bffcbe41b012b2f7b3c9084aed621775e6b8f"
   revision 1
 

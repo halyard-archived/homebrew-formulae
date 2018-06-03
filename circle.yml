@@ -1,6 +1,7 @@
 dependencies:
   override:
   - git clone https://github.com/akerl/brew.git ~/.brew
+  - git clone https://github.com/homebrew/homebrew-core ~/.brew/Library/Taps/homebrew/homebrew-core
   - git clone . ~/.brew/Library/Taps/halyard/homebrew-formulae
   - chmod g-w ~/.brew/Library/Taps/halyard/homebrew-formulae/Formula/*
 test:
