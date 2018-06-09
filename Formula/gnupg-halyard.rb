@@ -1,8 +1,8 @@
 class GnupgHalyard < Formula
   desc "GNU Privacy Guard: a free PGP replacement"
   homepage "https://www.gnupg.org/"
-  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.2.7.tar.bz2"
-  sha256 "d95b361ee6ef7eff86af40c8c72bf9313736ac9f7010d6604d78bf83818e976e"
+  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.2.8.tar.bz2"
+  sha256 "777b4cb8ced21965a5053d4fa20fe11484f0a478f3d011cef508a1a49db50dcd"
 
   head do
     url "https://dev.gnupg.org/source/gnupg.git"
