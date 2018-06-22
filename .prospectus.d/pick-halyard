@@ -1,7 +1,7 @@
 item do
   expected do
     github_release
-    repo 'thoughtbot/pick'
+    repo 'mptre/pick'
     regex /^v(.*)$/
   end
 
