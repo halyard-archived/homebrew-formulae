@@ -1,0 +1,11 @@
+dist: trusty
+install:
+- git clone https://github.com/akerl/brew.git ~/.brew
+- git clone https://github.com/homebrew/homebrew-core ~/.brew/Library/Taps/homebrew/homebrew-core
+- git clone . ~/.brew/Library/Taps/halyard/homebrew-formulae
+- chmod g-w ~/.brew/Library/Taps/halyard/homebrew-formulae/Formula/*
+script:
+- "~/.brew/bin/brew audit --except=revision_and_version_scheme ~/.brew/Library/Taps/halyard/homebrew-formulae/Formula/*"
+notifications:
+  slack:
+    secure: 0y49pxleQBfNUdIAzg4oNt4GwuzLljLVHV+nojLJmERxUYoWx2XtNR6kwyDaxsr3NzIHWTlUec6vUP9j9ReF9kspc8cvAkYeKamINxoZxQDqZ2VU96Y+V6Io3YsyYgguNktj9UV0YAekOxjnaektHp18s/3Dgr3T0442EADH7ePaxu+FQAWbYgLYN83jOQ2IbWdkHaGqQbbE344AgkBMiSGJzHeCPYuajVHqPVlIqxtyAIPNDciWDSg2OKKk+Sm0/elQwP9WPq0cyil2rgmr5oFr9HnYhXahDYvt/OkXx8o3m35hnpgNi4ULKaKHnbUHAv3buOz6CX/DaE7e1/GmUxJB5VwMhLX3LKPAQo9GcEaupKNOPprHLEqcGPfHVYW1uUKzt0fVPruXhO2ANeqLb4M2rawhrQAWw/5mDtP7ycsvgeYlgZnmpHTgoL+DrG+52ct9yFdyfJL6/m381WrbtXZCFxuPUcGCLi5YxSJfXfRcSSxAeH2+edmYlrI+ev5bqnAtgrwH6p2X1p6bF5J2NmjwobkisP3RYctS299T5o3tUOai9n6pxaQHFesqbwnTNA25MA+/rgHQGp+g79Yue5scERk4E8bclxgXOSbN78ufj11PF+937kLLFCAqm6tiOylzK4h/JJ/ky6nxvlGMU5YUBp2cScC84EBqJhWBu2s=
