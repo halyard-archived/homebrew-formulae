@@ -6,9 +6,9 @@ class OpensshHalyard < Formula
   sha256 "6b4b3ba2253d84ed3771c8050728d597c91cfce898713beb7b64a305b6f11aad"
 
   depends_on "autoconf" => :build
+  depends_on "pkg-config" => :build
   depends_on "openssl"
   depends_on "ldns" => :optional
-  depends_on "pkg-config" => :build
 
   patch_base = "https://raw.githubusercontent.com/halyard/homebrew-formulae/master/Patches"
 

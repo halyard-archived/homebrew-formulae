@@ -11,17 +11,17 @@ class GnupgHalyard < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "npth"
-  depends_on "gnutls"
-  depends_on "libgpg-error"
-  depends_on "libgcrypt"
-  depends_on "libksba"
-  depends_on "libassuan"
-  depends_on "pinentry"
-  depends_on "gettext"
   depends_on "adns"
-  depends_on "readline"
+  depends_on "gettext"
+  depends_on "gnutls"
+  depends_on "libassuan"
+  depends_on "libgcrypt"
+  depends_on "libgpg-error"
+  depends_on "libksba"
   depends_on "libusb"
+  depends_on "npth"
+  depends_on "pinentry"
+  depends_on "readline"
 
   conflicts_with "gnupg", :because => "This GnuPG provides GnuPG"
 
