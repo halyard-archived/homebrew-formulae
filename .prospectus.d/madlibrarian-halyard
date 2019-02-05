@@ -2,7 +2,7 @@ item do
   expected do
     github_tag
     repo 'akerl/madlibrarian'
-    regex /^([\d.]+)$/
+    regex /^v([\d.]+)$/
   end
 
   actual do
