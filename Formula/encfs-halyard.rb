@@ -12,13 +12,11 @@ class EncfsHalyard < Formula
   depends_on "openssl"
   depends_on :osxfuse
 
-  needs :cxx11
-
   def install
     ENV.cxx11
 
     mkdir "build" do
-      system "cmake", "..", *std_cmake_args, "-DCMAKE_INCLUDE_PATH=/usr/local/include", "-DCMAKE_LIBRARY_PATH=/usr/local/lib"
+      system "cmake", "..", *std_cmake_args
       system "make", "install"
     end
   end
