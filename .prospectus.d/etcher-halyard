@@ -3,7 +3,6 @@ item do
     github_release
     repo 'resin-io/etcher'
     regex /^v([\d.]+)$/
-    allow_prerelease
   end
 
   actual do
